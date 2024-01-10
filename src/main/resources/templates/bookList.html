@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>  
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="list-book">Nhập thông </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="my-books">My Books</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container col-8 mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Book Author</th>
+                    <th scope="col">Book Price</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book :${books}">
+                    <td th:text="${book.id}"></td>
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.price}"></td>
+                    <td>
+                        <a class="btn btn-success btn-sm" th:href="@{/my-books/{id}(id=${book.id})}">Add to MyBook</a>
+                        <a class="btn btn-warning btn-sm" th:href="@{/update-book/{id}(id=${book.id})}">Update</a>
+                        <a class="btn btn-danger btn-sm" th:href="@{/delete/{id}(id=${book.id})}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script th:src="@{bootstrap.bundle.min.js}">
+    </script>
+</body>
+</html>

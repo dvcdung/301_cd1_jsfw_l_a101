@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Kê khai thông tin khách hàng tiêm vacxin</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>  
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="list-book">List Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="my-books">My Books</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 mt-3">
+                <div class="card-header text-center">
+                    <h2>Kê khai thông tin khách hàng tiêm vacxin</h2>
+                </div>
+                <div class="card-body border-start border border-grey p-3">
+                    <form method="post" th:action="@{/cus-save}">
+                        <div class="mb-3">
+                            <label for="maKH" class="form-label">Mã khách hàng:</label>
+                            <input type="number" name="maKH" class="form-control" id="maKH">
+                        </div>
+                        <div class="mb-3">
+                            <label for="hoTen" class="form-label">Họ và tên:</label>
+                            <input type="text" name="hoTen" class="form-control" id="hoTen">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ngaySinh" class="form-label">Ngày sinh:</label>
+                            <input type="date" name="ngaySinh" class="form-control" id="ngaySinh">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cmnd" class="form-label">CMND:</label>
+                            <input type="text" name="cmnd" class="form-control" id="cmnd">
+                        </div>
+                        <div class="mb-3">
+                            <label for="soDienThoai" class="form-label">Số Điện Thoại:</label>
+                            <input type="text" name="soDienThoai" class="form-control" id="soDienThoai">
+                        </div>
+                        <div class="mb-3">
+                            <label for="diaChi" class="form-label">Địa chỉ:</label>
+                            <input type="text" name="diaChi" class="form-control" id="diaChi">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="text" name="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="maLieuVK" class="form-label">Mã liều Vacxin:</label>
+                            <input type="number" name="maLieuVK" class="form-control" id="maLieuVK">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ngayTiem" class="form-label">Ngày tiêm:</label>
+                            <input type="date" name="ngayTiem" class="form-control" id="ngayTiem">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ngayNhacHen" class="form-label">Ngày nhắc hẹn:</label>
+                            <input type="date" name="ngayNhacHen" class="form-control" id="ngayNhacHen">
+                        </div>
+                        <div class="mb-3">
+                            <label for="sucKhoeSauTiem" class="form-label">Sức khỏe sau tiêm:</label>
+                            <input type="text" name="sucKhoeSauTiem" class="form-control" id="sucKhoeSauTiem">
+                        </div>
+                        <div class="mb-3">
+                            <label for="danhGia" class="form-label">Đánh giá:</label>
+                            <input type="text" name="danhGia" class="form-control" id="danhGia">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{bootstrap.bundle.min.js}">
+    </script>
+</body>
+</html>
